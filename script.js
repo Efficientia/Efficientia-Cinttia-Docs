@@ -1,5 +1,3 @@
-document.body.classList.add('dark');
-localStorage.setItem('theme', 'dark');
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('#main-nav');
 const navLinks = [...document.querySelectorAll('.nav-link')];
