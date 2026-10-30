@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinttia | Como funciona o SRE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="sre-page">
+        <header class="sre-hero">
+            <h1>Como funciona o SRE da Cinttia</h1>
+            <p>Antes de enviar uma mensagem, entenda o caminho da solicitação, os controles de confiabilidade e como o custo de cada consulta é estimado e registrado.</p>
+        </header>
+        <div class="sre-content">
+            <nav class="sre-nav" aria-label="Seções desta página">
+                <a href="#fluxo">Fluxo</a><a href="#confiabilidade">Confiabilidade</a><a href="#custos">Custos</a><a href="#privacidade">Privacidade</a>
+            </nav>
+
+            <section id="fluxo" class="sre-section">
+                <h2>1. O que acontece quando você envia uma pergunta?</h2>
+                <p>O sistema registra cada etapa operacional para medir saúde, latência, tokens e custo sem mostrar essa telemetria dentro da resposta do chat.</p>
+                <div class="flow">
+                    <div class="flow-step"><strong>Entrada</strong><span>Validação, anonimização de PII e bloqueio de prompt injection.</span></div>
+                    <div class="flow-step"><strong>Roteamento</strong><span>Classificação da intenção para FAQ, navegação, SQL ou dashboard.</span></div>
+                    <div class="flow-step"><strong>Especialista</strong><span>Execução da ferramenta ou modelo adequado à pergunta.</span></div>
+                    <div class="flow-step"><strong>Auditoria</strong><span>Juiz verifica fidelidade, formato e ausência de clichês.</span></div>
+                    <div class="flow-step"><strong>Saída</strong><span>Guardrail final higieniza a resposta antes da entrega.</span></div>
+                </div>
+            </section>
+
+            <section id="confiabilidade" class="sre-section">
+                <h2>2. Como o SRE mede confiabilidade?</h2>
+                <div class="cards">
+                    <article class="info-card"><div class="metric">p95 ≤ 8 s</div><h3>Latência</h3><p>O p95 mostra o tempo abaixo do qual 95% das execuções terminam. Ele evita que uma média esconda consultas lentas.</p></article>
+                    <article class="info-card"><div class="metric">≤ 5%</div><h3>Taxa de erro</h3><p>Percentual de execuções encerradas com erro. O SLO considera o serviço saudável quando permanece dentro desse limite.</p></article>
+                    <article class="info-card"><div class="metric">99%</div><h3>Disponibilidade alvo</h3><p>Objetivo operacional de sucesso do serviço, acompanhado junto com bloqueios e falhas de integração.</p></article>
+                    <article class="info-card"><div class="metric">Fallback</div><h3>Continuidade</h3><p>Se o modelo titular falhar, o sistema pode usar um modelo reserva. O evento é contado para análise posterior.</p></article>
+                </div>
+            </section>
+
+            <section id="custos" class="sre-section">
+                <h2>3. Como os custos são calculados?</h2>
+                <p>O custo é calculado por tokens de entrada e saída: cada provedor possui um preço por 1 milhão de tokens. A fórmula é:</p>
+                <div class="note"><strong>Custo USD = (tokens de entrada × preço de entrada + tokens de saída × preço de saída) ÷ 1.000.000</strong><br>O valor em reais usa a taxa USD/BRL configurada no servidor.</div>
+                <table class="cost-table">
+                    <thead><tr><th>Modelo</th><th>Entrada / 1M tokens</th><th>Saída / 1M tokens</th></tr></thead>
+                    <tbody>
+                        <tr><td>Gemini 3.5 Flash Lite</td><td>US$ 0,075</td><td>US$ 0,30</td></tr>
+                        <tr><td>Llama 3.3 70B / GPT-OSS 120B</td><td>US$ 0,59</td><td>US$ 0,79</td></tr>
+                        <tr><td>Llama 3.1 8B Instant</td><td>US$ 0,05</td><td>US$ 0,08</td></tr>
+                        <tr><td>GPT-4o</td><td>US$ 2,50</td><td>US$ 10,00</td></tr>
+                    </tbody>
+                </table>
+                <p class="note">O valor real de uma consulta depende dos tokens efetivamente usados, das etapas acionadas e de eventuais fallbacks. A tabela acima resume os preços configurados no projeto; o painel SRE mostra os totais registrados.</p>
+            </section>
+
+            <section id="privacidade" class="sre-section">
+                <h2>4. O que é observado e o que não é?</h2>
+                <div class="cards">
+                    <article class="info-card"><h3>Observado</h3><p>Tempo, status, rota, modelo, tokens, custo, fallback, ferramentas acionadas e identificadores técnicos da execução.</p></article>
+                    <article class="info-card"><h3>Protegido</h3><p>Prompts e conteúdos textuais não são gravados na telemetria. O guardrail trata PII antes do processamento.</p></article>
+                    <article class="info-card"><h3>Onde consultar</h3><p>O painel em tempo real fica disponível em “Painel SRE / FinOps” e consolida execuções, modelos, rotas e custos.</p></article>
+                </div>
+            </section>
+
+            <div class="actions"><a class="primary-action" href="/">Ir para o chat</a><a class="secondary-action" href="/monitor" target="_blank" rel="noopener">Abrir painel SRE / FinOps</a></div>
+        </div>
+    </main>
+    <script src="script.js" defer></script>
+</body>
+</html>
