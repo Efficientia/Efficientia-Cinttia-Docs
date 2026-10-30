@@ -41,6 +41,7 @@ if ('IntersectionObserver' in window) {
         entries.forEach((entry) => {
             if (!entry.isIntersecting) return;
             const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+            if (!activeLink) return;
             navLinks.forEach((link) => link.classList.toggle('is-active', link === activeLink));
         });
     }, { rootMargin: '-25% 0px -65% 0px', threshold: 0 });
