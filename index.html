@@ -14,20 +14,47 @@
     <div class="app-shell">
         <header class="topbar">
             <a class="brand" href="#inicio" aria-label="Cinttia SRE - início"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Cinttia</strong><small>SRE &amp; FinOps</small></span></a>
+            <div class="header-context"><span>Documentação</span><b>/</b><span>SRE da Cinttia</span></div>
+            <span class="header-version">v1.0.0</span>
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span class="sr-only">Abrir menu</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-            <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
-                <a class="nav-link is-active" href="#inicio">Visão geral</a><a class="nav-link" href="#consulta">Consulta</a><a class="nav-link" href="#confiabilidade">SLOs</a><a class="nav-link" href="#metricas">Métricas</a><a class="nav-link" href="#custos">Custos</a><a class="nav-link" href="#seguranca">Segurança</a><a class="nav-link" href="#incidentes">Incidentes</a>
-            </nav>
-            <a class="topbar-action" href="/monitor" target="_blank" rel="noopener">Abrir painel <span aria-hidden="true">↗</span></a>
         </header>
+            <aside class="docs-sidebar" id="main-nav" aria-label="Índice da documentação">
+                <div class="sidebar-title">Nesta página</div>
+                <a class="nav-link is-active" href="#inicio">Visão geral</a>
+                <a class="nav-link" href="#consulta">1. Visão geral</a>
+                <a class="nav-link" href="#fluxo">2. Jornada da consulta</a>
+                <a class="nav-link" href="#confiabilidade">3. Confiabilidade</a>
+                <a class="nav-link" href="#metricas">4. Métricas</a>
+                <a class="nav-link" href="#estados">5. Estados</a>
+                <a class="nav-link" href="#continuidade">6. Continuidade</a>
+                <a class="nav-link" href="#custos">7. Custos</a>
+                <a class="nav-link" href="#seguranca">8. Segurança</a>
+                <a class="nav-link" href="#qualidade">9. Qualidade</a>
+                <a class="nav-link" href="#painel">10. Painel</a>
+                <a class="nav-link" href="#alertas">11. Alertas</a>
+                <a class="nav-link" href="#incidentes">12. Incidentes</a>
+                <a class="nav-link" href="#retencao">13. Retenção</a>
+                <a class="nav-link" href="#boas-praticas">14. Boas práticas</a>
+                <a class="nav-link" href="#governanca">15. Governança</a>
+                <a class="nav-link" href="#limitacoes">16. Limitações</a>
+                <a class="nav-link" href="#glossario">17. Glossário</a>
+            </aside>
 
         <main id="inicio">
-            <section class="hero section-wrap" aria-labelledby="hero-title">
-                <div class="hero-copy"><div class="eyebrow"><span class="status-dot"></span> Documentação pública · versão operacional</div><h1 id="hero-title">Confiabilidade explicada de ponta a ponta.</h1><p class="hero-lead">Um guia funcional sobre como a Cinttia mede qualidade, desempenho, segurança e custos em cada atendimento de inteligência artificial.</p><div class="hero-actions"><a class="button button-primary" href="#consulta">Ler a documentação <span aria-hidden="true">↓</span></a><a class="button button-ghost" href="/monitor">Ver painel SRE <span aria-hidden="true">→</span></a></div><div class="hero-meta"><span class="live-indicator"></span> SRE operacional <span class="meta-divider"></span> Conteúdo público e funcional</div></div>
-                <div class="hero-visual" aria-label="Resumo das dimensões acompanhadas pela Cinttia"><div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div><div class="core-card"><div class="core-card-header"><span class="icon-badge icon-green"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18"/></svg></span><span><small>Reliability overview</small><strong>Operação observável</strong></span><span class="health-check">✓</span></div><div class="health-score"><strong>5</strong><span>dimensões principais</span></div><div class="health-bars"><span style="--bar: 84%"></span><span style="--bar: 92%"></span><span style="--bar: 76%"></span><span style="--bar: 96%"></span><span style="--bar: 88%"></span><span style="--bar: 100%"></span><span style="--bar: 94%"></span></div><div class="health-footer"><span>Confiabilidade · desempenho</span><strong><i></i> segurança ativa</strong></div></div><div class="floating-stat stat-latency"><span class="mini-icon">⌁</span><small>Latência p95</small><strong>≤ 8s</strong><em>objetivo operacional</em></div><div class="floating-stat stat-cost"><span class="mini-icon">$</span><small>FinOps</small><strong>Por token</strong><em>custo explicável</em></div></div>
+            <section class="docs-intro section-wrap" aria-labelledby="hero-title">
+                <div class="breadcrumb"><a href="#inicio">Cinttia</a><span>/</span><strong>Documentação SRE</strong></div>
+                <div class="intro-label">DOCUMENTAÇÃO PÚBLICA E FUNCIONAL</div>
+                <h1 id="hero-title">Documentação de SRE da Cinttia</h1>
+                <p class="intro-lead">Referência operacional sobre confiabilidade, observabilidade, segurança, qualidade e custos do serviço de inteligência artificial.</p>
+                <div class="document-meta"><span>Versão 1.0.0</span><span>Atualizado em 2026</span><span>Leitura estimada: 18 min</span></div>
             </section>
 
-            <section class="metrics section-wrap" aria-label="Objetivos e dimensões do SRE"><article class="metric-card"><span class="metric-icon blue"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></span><span><small>Desempenho</small><strong>p95 ≤ 8s</strong><em>tempo de resposta</em></span></article><article class="metric-card"><span class="metric-icon green"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg></span><span><small>Confiabilidade</small><strong>99%</strong><em>disponibilidade alvo</em></span></article><article class="metric-card"><span class="metric-icon orange"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M17 7H9.5a2.5 2.5 0 1 0 0 5h5a2.5 2.5 0 1 1 0 5H7"/></svg></span><span><small>FinOps</small><strong>Tokens</strong><em>consumo acompanhado</em></span></article><article class="metric-card"><span class="metric-icon purple"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 7v5c0 5 3.4 8 8 9 4.6-1 8-4 8-9V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg></span><span><small>Segurança</small><strong>PII safe</strong><em>guardrails ativos</em></span></article></section>
+            <div class="document-summary section-wrap" aria-label="Resumo dos objetivos operacionais">
+                <span><b>Latência p95</b><strong>Até 8 segundos</strong></span>
+                <span><b>Taxa de erro</b><strong>Até 5%</strong></span>
+                <span><b>Disponibilidade</b><strong>99% de objetivo</strong></span>
+                <span><b>Escopo</b><strong>SRE · Segurança · FinOps</strong></span>
+            </div>
 
             <section class="content-section section-wrap" id="consulta" aria-labelledby="consulta-title"><div class="section-heading"><div><span class="section-kicker">01 / Visão geral</span><h2 id="consulta-title">Medir antes de otimizar.</h2></div><p>A telemetria técnica apoia diagnóstico, melhoria contínua e controle operacional sem aparecer na mensagem normal entregue à pessoa.</p></div><div class="doc-grid three-cols"><article class="doc-card"><span class="doc-number">01</span><h3>Confiabilidade</h3><p>Responder de forma consistente, segura e adequada ao contexto da pergunta.</p></article><article class="doc-card"><span class="doc-number">02</span><h3>Desempenho</h3><p>Acompanhar o tempo necessário para concluir uma solicitação e suas etapas externas.</p></article><article class="doc-card"><span class="doc-number">03</span><h3>Segurança</h3><p>Prevenir uso indevido, vazamento de dados e instruções maliciosas.</p></article><article class="doc-card"><span class="doc-number">04</span><h3>Qualidade</h3><p>Verificar clareza, factualidade, conformidade e utilidade da resposta.</p></article><article class="doc-card"><span class="doc-number">05</span><h3>FinOps</h3><p>Relacionar tokens, etapas acionadas e custos de inteligência artificial.</p></article><article class="doc-card callout-card"><span class="doc-number">06</span><h3>Princípio central</h3><p>Falhar de forma segura é melhor do que responder com dados incorretos ou expor informações protegidas.</p></article></div><div class="prose principles"><h3>Princípios operacionais</h3><ol><li><strong>Segurança por padrão:</strong> uma solicitação duvidosa deve ser protegida antes de ser processada.</li><li><strong>Separar qualidade de velocidade:</strong> uma resposta rápida não é boa se estiver incorreta ou sem fundamento.</li><li><strong>Minimizar dados:</strong> registrar metadados suficientes para operar sem armazenar conteúdo desnecessário.</li><li><strong>Tratar bloqueio como proteção:</strong> impedir uma ação insegura é resultado esperado do controle.</li><li><strong>Melhorar continuamente:</strong> incidentes, alertas e desvios devem produzir ações de melhoria.</li></ol></div></section>
 
@@ -63,9 +90,9 @@
 
             <section class="content-section section-wrap" id="glossario" aria-labelledby="glossario-title"><div class="section-heading"><div><span class="section-kicker">17 / Referência</span><h2 id="glossario-title">Glossário essencial.</h2></div><p>Termos usados para interpretar a operação da Cinttia.</p></div><div class="glossary-grid"><dl><dt>SRE</dt><dd>Engenharia voltada à confiabilidade e operação de serviços.</dd><dt>SLO / SLI</dt><dd>Objetivo mensurável e indicador usado para medi-lo.</dd><dt>p95</dt><dd>Percentil que representa o limite de 95% das observações.</dd><dt>FinOps</dt><dd>Gestão financeira do consumo de tecnologia e IA.</dd><dt>Token</dt><dd>Unidade de texto utilizada por um modelo.</dd><dt>PII</dt><dd>Informação pessoal identificável.</dd></dl><dl><dt>Fallback</dt><dd>Caminho alternativo para manter continuidade.</dd><dt>Guardrail</dt><dd>Controle de segurança, privacidade ou conformidade.</dd><dt>Auditoria</dt><dd>Revisão da qualidade e adequação de uma resposta.</dd><dt>Latência</dt><dd>Tempo entre início e conclusão de uma operação.</dd><dt>Saturação</dt><dd>Proximidade de um recurso do seu limite operacional.</dd><dt>Incidente</dt><dd>Evento que degrada confiabilidade, segurança, qualidade ou custo.</dd></dl></div></section>
 
-            <section class="closing-cta section-wrap"><div><span class="section-kicker">Acompanhe a operação</span><h2>Confiabilidade é uma prática contínua.</h2><p>Consulte o painel para acompanhar SLOs, custos, qualidade, segurança e tendências do serviço.</p></div><a class="button button-light" href="/monitor" target="_blank" rel="noopener">Abrir painel SRE <span>↗</span></a></section>
+            <section class="closing-cta section-wrap"><div><span class="section-kicker">Encerramento</span><h2>Confiabilidade é uma prática contínua.</h2><p>Este documento reúne os conceitos necessários para interpretar SLOs, custos, qualidade, segurança e tendências da Cinttia.</p></div></section>
         </main>
-        <footer class="footer section-wrap"><span>© 2025 Efficientia · Documentação SRE da Cinttia</span><span>Conteúdo público e funcional.</span></footer>
+        <footer class="footer section-wrap"><span>© 2026 Efficientia · Documentação SRE da Cinttia</span><span>Conteúdo público e funcional.</span></footer>
     </div>
     <script src="script.js" defer></script>
 </body>
