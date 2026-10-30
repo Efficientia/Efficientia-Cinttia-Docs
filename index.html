@@ -7,17 +7,26 @@
     <title>Documentação SRE | Cinttia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="app-shell">
         <header class="topbar">
-            <a class="brand" href="#inicio" aria-label="Cinttia SRE - início"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Cinttia</strong><small>SRE &amp; FinOps</small></span></a>
-            <div class="header-context"><span>Documentação</span><b>/</b><span>SRE da Cinttia</span></div>
-            <span class="header-version">v1.0.0</span>
-            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span class="sr-only">Abrir menu</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            <div class="topbar-inner">
+                <a class="brand" href="#inicio" aria-label="Efficientia - Início">
+                    <img src="Group 95.svg" alt="Efficientia" class="brand-logo" width="160" height="36">
+                </a>
+                <div class="header-context"><span>Documentação</span><b>/</b><span>SRE &amp; FinOps da Cinttia</span></div>
+                <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+                    <span class="sr-only">Abrir menu</span>
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
         </header>
+            <div class="docs-wrapper">
             <aside class="docs-sidebar" id="main-nav" aria-label="Índice da documentação">
                 <div class="sidebar-title">Nesta página</div>
                 <a class="nav-link is-active" href="#inicio">Visão geral</a>
@@ -39,8 +48,7 @@
                 <a class="nav-link" href="#limitacoes">16. Limitações</a>
                 <a class="nav-link" href="#glossario">17. Glossário</a>
             </aside>
-
-        <main id="inicio">
+            <main id="inicio" class="docs-content">
             <section class="docs-intro section-wrap" aria-labelledby="hero-title">
                 <div class="breadcrumb"><a href="#inicio">Cinttia</a><span>/</span><strong>Documentação SRE</strong></div>
                 <div class="intro-label">DOCUMENTAÇÃO PÚBLICA E FUNCIONAL</div>
@@ -68,7 +76,13 @@
 
             <section class="content-section section-wrap" id="continuidade" aria-labelledby="continuidade-title"><div class="section-heading"><div><span class="section-kicker">06 / Continuidade</span><h2 id="continuidade-title">Fallback mantém o atendimento seguro.</h2></div><p>Um caminho alternativo reduz interrupções, mas cada ocorrência deve ser contabilizada por seu impacto em tempo, custo e qualidade.</p></div><div class="doc-grid three-cols"><article class="doc-card"><span class="doc-number">01</span><h3>Quando usar</h3><p>Indisponibilidade do modelo principal, limite de uso, latência elevada ou configuração incompatível.</p></article><article class="doc-card"><span class="doc-number">02</span><h3>O que muda</h3><p>O modelo responsável, a latência, o custo e possivelmente o formato do resultado.</p></article><article class="doc-card callout-card"><span class="doc-number">03</span><h3>Critério de saúde</h3><p>Preserva dados, entrega resposta coerente, respeita limites e registra a ocorrência.</p></article></div><div class="prose"><h3>Fallback persistente é sinal de investigação</h3><p>Uma elevação recorrente pode indicar instabilidade de provedor, limite atingido, alteração de disponibilidade, aumento de latência ou preço inadequado. O uso ocasional pode ser normal; a tendência deve ser acompanhada.</p></div></section>
 
-            <section class="content-section section-wrap" id="custos" aria-labelledby="custos-title"><div class="section-heading"><div><span class="section-kicker">07 / FinOps</span><h2 id="custos-title">O custo é explicado por tokens e etapas.</h2></div><p>Estimativas ajudam a planejar, mas o valor final depende do consumo efetivamente registrado pelos provedores.</p></div><div class="cost-layout"><div class="formula-card"><span class="formula-label">Fórmula de cálculo</span><div class="formula">Custo USD = <b>(tokens<sub>in</sub> × preço<sub>in</sub>) + (tokens<sub>out</sub> × preço<sub>out</sub>)</b><br><span>1.000.000</span></div><p>Custo em BRL = Custo em USD × taxa USD/BRL configurada.</p><a class="text-link" href="/monitor">Ver custos no painel <span>→</span></a></div><div class="table-wrap"><table class="cost-table"><caption>Preços em dólares por 1 milhão de tokens</caption><thead><tr><th>Modelo</th><th>Entrada</th><th>Saída</th></tr></thead><tbody><tr><td><strong>Gemini 3.5 Flash Lite</strong><small>Google</small></td><td>US$ 0,075</td><td>US$ 0,30</td></tr><tr><td><strong>Gemini 2.5 Flash</strong><small>Google</small></td><td>US$ 0,30</td><td>US$ 2,50</td></tr><tr><td><strong>Gemini 2.5 Pro</strong><small>Google</small></td><td>US$ 1,25</td><td>US$ 10,00</td></tr><tr><td><strong>Llama 3.3 70B / GPT-OSS 120B</strong><small>Modelos de alta capacidade</small></td><td>US$ 0,59</td><td>US$ 0,79</td></tr><tr><td><strong>Llama 3.1 8B Instant</strong><small>Groq</small></td><td>US$ 0,05</td><td>US$ 0,08</td></tr><tr><td><strong>Qwen 27B</strong><small>Modelo alternativo</small></td><td>US$ 0,20</td><td>US$ 0,40</td></tr><tr><td><strong>GPT-4o / GPT-4o mini</strong><small>OpenAI</small></td><td>US$ 2,50 / 0,15</td><td>US$ 10,00 / 0,60</td></tr></tbody></table></div></div><div class="prose"><h3>Tokens e estimativas</h3><p>Tokens são unidades de texto. Uma palavra pode corresponder a um ou mais tokens conforme idioma, pontuação e modelo. A estimativa prévia pode indicar categoria, etapas, tokens, custo e latência prováveis, mas não é uma cobrança.</p></div><div class="table-wrap"><table class="doc-table"><caption>Estimativas típicas por tipo de consulta</caption><thead><tr><th>Tipo</th><th>Entrada</th><th>Saída</th><th>Custo típico</th><th>Latência</th></tr></thead><tbody><tr><td><strong>Dúvida institucional</strong></td><td>1.720</td><td>465</td><td>US$ 0,00045</td><td>1.350 ms</td></tr><tr><td><strong>Análise operacional</strong></td><td>3.310</td><td>1.045</td><td>US$ 0,00115</td><td>2.850 ms</td></tr><tr><td><strong>Painel executivo</strong></td><td>3.780</td><td>1.175</td><td>US$ 0,00135</td><td>3.400 ms</td></tr><tr><td><strong>Bloqueio preventivo</strong></td><td>280</td><td>40</td><td>US$ 0,00003</td><td>220 ms</td></tr></tbody></table></div><div class="doc-card example-card"><span class="section-kicker">Exemplo</span><h3>2.000 tokens de entrada + 500 de saída</h3><p>Com entrada a US$ 0,075/M e saída a US$ 0,30/M:</p><code>(2.000 × 0,075 + 500 × 0,30) ÷ 1.000.000 = US$ 0,00030</code><p>Com câmbio ilustrativo de R$ 5,75: <strong>R$ 0,001725</strong>.</p></div></section>
+            <section class="content-section section-wrap" id="custos" aria-labelledby="custos-title"><div class="section-heading"><div><span class="section-kicker">07 / FinOps</span><h2 id="custos-title">O custo é explicado por tokens e etapas.</h2></div><p>Estimativas ajudam a planejar, mas o valor final depende do consumo efetivamente registrado pelos provedores.</p></div><div class="cost-layout"><div class="formula-card"><span class="formula-label">Fórmula de cálculo</span><div class="formula" aria-label="Fórmula de cálculo do custo em dólares">
+                            <span class="formula-label-calc">Custo USD =</span>
+                            <div class="formula-fraction">
+                                <span class="formula-num"><b>(tokens<sub>in</sub> × preço<sub>in</sub>)</b> + <b>(tokens<sub>out</sub> × preço<sub>out</sub>)</b></span>
+                                <span class="formula-den">1.000.000</span>
+                            </div>
+                        </div><p>Custo em BRL = Custo em USD × taxa USD/BRL configurada.</p><a class="text-link" href="/monitor">Ver custos no painel <span>→</span></a></div><div class="table-wrap"><table class="cost-table"><caption>Preços em dólares por 1 milhão de tokens</caption><thead><tr><th>Modelo</th><th>Entrada</th><th>Saída</th></tr></thead><tbody><tr><td><strong>Gemini 3.5 Flash Lite</strong><small>Google</small></td><td>US$ 0,075</td><td>US$ 0,30</td></tr><tr><td><strong>Gemini 2.5 Flash</strong><small>Google</small></td><td>US$ 0,30</td><td>US$ 2,50</td></tr><tr><td><strong>Gemini 2.5 Pro</strong><small>Google</small></td><td>US$ 1,25</td><td>US$ 10,00</td></tr><tr><td><strong>Llama 3.3 70B / GPT-OSS 120B</strong><small>Modelos de alta capacidade</small></td><td>US$ 0,59</td><td>US$ 0,79</td></tr><tr><td><strong>Llama 3.1 8B Instant</strong><small>Groq</small></td><td>US$ 0,05</td><td>US$ 0,08</td></tr><tr><td><strong>Qwen 27B</strong><small>Modelo alternativo</small></td><td>US$ 0,20</td><td>US$ 0,40</td></tr><tr><td><strong>GPT-4o / GPT-4o mini</strong><small>OpenAI</small></td><td>US$ 2,50 / 0,15</td><td>US$ 10,00 / 0,60</td></tr></tbody></table></div></div><div class="prose"><h3>Tokens e estimativas</h3><p>Tokens são unidades de texto. Uma palavra pode corresponder a um ou mais tokens conforme idioma, pontuação e modelo. A estimativa prévia pode indicar categoria, etapas, tokens, custo e latência prováveis, mas não é uma cobrança.</p></div><div class="table-wrap"><table class="doc-table"><caption>Estimativas típicas por tipo de consulta</caption><thead><tr><th>Tipo</th><th>Entrada</th><th>Saída</th><th>Custo típico</th><th>Latência</th></tr></thead><tbody><tr><td><strong>Dúvida institucional</strong></td><td>1.720</td><td>465</td><td>US$ 0,00045</td><td>1.350 ms</td></tr><tr><td><strong>Análise operacional</strong></td><td>3.310</td><td>1.045</td><td>US$ 0,00115</td><td>2.850 ms</td></tr><tr><td><strong>Painel executivo</strong></td><td>3.780</td><td>1.175</td><td>US$ 0,00135</td><td>3.400 ms</td></tr><tr><td><strong>Bloqueio preventivo</strong></td><td>280</td><td>40</td><td>US$ 0,00003</td><td>220 ms</td></tr></tbody></table></div><div class="doc-card example-card"><span class="section-kicker">Exemplo</span><h3>2.000 tokens de entrada + 500 de saída</h3><p>Com entrada a US$ 0,075/M e saída a US$ 0,30/M:</p><code>(2.000 × 0,075 + 500 × 0,30) ÷ 1.000.000 = US$ 0,00030</code><p>Com câmbio ilustrativo de R$ 5,75: <strong>R$ 0,001725</strong>.</p></div></section>
 
             <section class="content-section section-wrap" id="seguranca" aria-labelledby="seguranca-title"><div class="section-heading"><div><span class="section-kicker">08 / Proteção</span><h2 id="seguranca-title">Segurança e privacidade por padrão.</h2></div><p>Somente os dados necessários para operar, calcular custos, investigar incidentes e comprovar conformidade devem ser acompanhados.</p></div><div class="privacy-grid"><article class="privacy-card observed"><span class="privacy-icon">◉</span><h3>Informações pessoais</h3><p>CPF, CNPJ, telefone e outros identificadores podem ser anonimizados antes de serem encaminhados aos modelos.</p><span class="privacy-status">PII protegida</span></article><article class="privacy-card protected"><span class="privacy-icon">⌁</span><h3>Telemetria mínima</h3><p>O acompanhamento utiliza duração, tokens, custo, modelo, etapa, situação, ferramenta e erro resumido — não o texto integral.</p><span class="privacy-status">Minimização</span></article><article class="privacy-card ai-card"><span class="privacy-icon">✦</span><h3>Proteção da resposta</h3><p>Antes da entrega, o sistema pode remover instruções internas, PII, marcadores técnicos e padrões inadequados.</p><span class="privacy-status">Guardrails ativos</span></article></div><div class="prose"><h3>Tentativas de manipulação</h3><p>O sistema pode bloquear tentativas de substituir instruções de segurança, obter informações internas, extrair credenciais, forçar comportamento proibido ou induzir vazamento. Esses eventos são contabilizados sem expor o conteúdo sensível que os originou.</p></div></section>
 
@@ -92,7 +106,13 @@
 
             <section class="closing-cta section-wrap"><div><span class="section-kicker">Encerramento</span><h2>Confiabilidade é uma prática contínua.</h2><p>Este documento reúne os conceitos necessários para interpretar SLOs, custos, qualidade, segurança e tendências da Cinttia.</p></div></section>
         </main>
-        <footer class="footer section-wrap"><span>© 2026 Efficientia · Documentação SRE da Cinttia</span><span>Conteúdo público e funcional.</span></footer>
+        </div>
+        <footer class="footer">
+            <div class="footer-inner">
+                <span>© 2026 Efficientia · Documentação SRE &amp; FinOps da Cinttia</span>
+                <span>Conteúdo público e funcional.</span>
+            </div>
+        </footer>
     </div>
     <script src="script.js" defer></script>
 </body>
